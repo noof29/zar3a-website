@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زرعة - منصة زراعية مستدامة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-pattern {
+            background-color: #f0f9eb;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2392c47c' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .tab-active {
+            color: #4d7c0f;
+            border-bottom: 3px solid #4d7c0f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="h-10 w-10 text-lime-700" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z"></path>
+                        </svg>
+                        <span class="mr-2 text-2xl font-bold text-lime-800">زرعة</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <button class="bg-lime-600 hover:bg-lime-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300 mr-4">ابدأ الآن</button>
+                    <a href="#about" class="text-gray-700 hover:text-lime-700 px-3 py-2 text-sm font-medium">عن المنصة</a>
+                    <a href="#impact" class="text-gray-700 hover:text-lime-700 px-3 py-2 text-sm font-medium">تأثيرنا</a>
+                    <a href="#features" class="text-gray-700 hover:text-lime-700 px-3 py-2 text-sm font-medium">المميزات</a>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-lime-700">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#features" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-lime-700 hover:bg-gray-50 rounded-md">المميزات</a>
+                <a href="#impact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-lime-700 hover:bg-gray-50 rounded-md">تأثيرنا</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-lime-700 hover:bg-gray-50 rounded-md">عن المنصة</a>
+                <button class="mt-2 w-full bg-lime-600 hover:bg-lime-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">ابدأ الآن</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern pt-28 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                        ربط <span class="text-lime-700">المزارعين</span> و <span class="text-lime-700">المستهلكين</span> لمستقبل مستدام
+                    </h1>
+                    <p class="mt-4 text-xl text-gray-600">
+                        منصة ذكية تبني شبكة رقمية متكاملة للنظم البيئية الزراعية المحلية.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-white hover:bg-gray-100 text-lime-700 border border-lime-600 px-6 py-3 rounded-lg text-lg font-medium transition duration-300 shadow-md hover:shadow-lg ml-4">
+                            تسوق المنتجات المحلية
+                        </button>
+                        <button class="bg-lime-600 hover:bg-lime-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-300 shadow-lg hover:shadow-xl">
+                            انضم كمزارع
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-64 h-64 bg-lime-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                        <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                        <div class="relative">
+                            <svg class="w-full h-auto max-w-lg" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="50" y="50" width="400" height="300" rx="20" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+                                <circle cx="250" cy="120" r="50" fill="#4d7c0f" opacity="0.2"/>
+                                <path d="M250 90C235 90 220 95 210 105C200 115 195 130 195 145C195 160 200 175 210 185C220 195 235 200 250 200C265 200 280 195 290 185C300 175 305 160 305 145C305 130 300 115 290 105C280 95 265 90 250 90Z" fill="#4d7c0f"/>
+                                <path d="M250 90V70C250 65 245 60 240 60C235 60 230 65 230 70V90" stroke="#4d7c0f" stroke-width="4"/>
+                                <rect x="80" y="240" width="340" height="80" rx="10" fill="#f3f4f6"/>
+                                <rect x="100" y="260" width="60" height="40" rx="5" fill="#d1fae5"/>
+                                <rect x="180" y="260" width="60" height="40" rx="5" fill="#d1fae5"/>
+                                <rect x="260" y="260" width="60" height="40" rx="5" fill="#d1fae5"/>
+                                <rect x="340" y="260" width="60" height="40" rx="5" fill="#d1fae5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800">المميزات الرئيسية</h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    توفر زرعة حلاً شاملاً لربط جميع أصحاب المصلحة في النظام البيئي الزراعي.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                        <div class="w-12 h-12 bg-lime-100 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-lime-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">سوق رقمي</h3>
+                        <p class="mt-2 text-gray-600">
+                            يقوم المزارعون بإدراج منتجاتهم الطازجة مع صور عالية الجودة وتفاصيل، بينما يتصفح المستهلكون حسب الموقع أو الموسم أو نوع المحصول.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                        <div class="w-12 h-12 bg-lime-100 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-lime-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">تتبع كامل للمنتج</h3>
+                        <p class="mt-2 text-gray-600">
+                            يتيح التتبع عبر رمز QR أو تقنية البلوكتشين للمستهلكين التحقق من أصل المزرعة وطرق الزراعة وتاريخ الحصاد.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                        <div class="w-12 h-12 bg-lime-100 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-lime-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">مجتمع زراعي</h3>
+                        <p class="mt-2 text-gray-600">
+                            منتدى يتبادل فيه المزارعون أفضل الممارسات ونصائح مكافحة الآفات والنصائح الموسمية مع بعضهم البعض وهواة الزراعة المنزلية.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                        <div class="w-12 h-12 bg-lime-100 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-lime-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">بوابة المطاعم والموردين</h3>
+                        <p class="mt-2 text-gray-600">
+                            يبحث أصحاب المطاعم وتجار الجملة عن منتجين محليين موثوقين بناءً على نوع المنتج وخيارات التوصيل وتقييمات الجودة.
+                        </p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                        <div class="w-12 h-12 bg-lime-100 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-lime-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">التقييمات والملاحظات</h3>
+                        <p class="mt-2 text-gray-600">
+                            يترك المشترون تقييمات حول جودة المنتج ودقة التوصيل والرضا العام لتشجيع التحسين المستمر.
+                        </p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                        <div class="w-12 h-12 bg-lime-100 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-lime-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">تحليلات ذكية</h3>
+                        <p class="mt-2 text-gray-600">
+                            يتلقى المزارعون لوحات معلومات مخصصة تعرض اتجاهات المبيعات وفترات الطلب المرتفع ومقاييس أداء المحاصيل لتحسين التخطيط.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Demo Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">جرب زرعة</h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    شاهد كيف تربط منصتنا المزارعين والمستهلكين في تجربة رقمية سلسة.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-white rounded-xl shadow-lg p-2 max-w-sm mx-auto">
+                        <div class="bg-gray-100 rounded-lg p-2">
+                            <div class="bg-white rounded-lg overflow-hidden">
+                                <div class="h-12 bg-lime-700 flex items-center px-4">
+                                    <div class="flex space-x-2">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    </div>
+                                    <div class="mx-auto text-white font-medium">تطبيق زرعة</div>
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <h3 class="font-semibold text-gray-800">السوق المحلي</h3>
+                                        <div class="text-sm text-lime-600">نطاق ٥ كم</div>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-2 gap-4 mb-4">
+                                        <div class="bg-gray-50 rounded-lg p-3">
+                                            <div class="h-24 bg-lime-100 rounded-lg mb-2 flex items-center justify-center">
+                                                <svg class="w-12 h-12 text-lime-700" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="text-sm font-medium">طماطم عضوية</div>
+                                            <div class="text-xs text-gray-500">مزرعة الأمل</div>
+                                            <div class="text-sm font-semibold text-lime-700 mt-1">١.٣٥٠ ر.ع/كجم</div>
+                                        </div>
+                                        <div class="bg-gray-50 rounded-lg p-3">
+                                            <div class="h-24 bg-lime-100 rounded-lg mb-2 flex items-center justify-center">
+                                                <svg class="w-12 h-12 text-lime-700" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="text-sm font-medium">خيار طازج</div>
+                                            <div class="text-xs text-gray-500">الوادي الأخضر</div>
+                                            <div class="text-sm font-semibold text-lime-700 mt-1">١.٠٥٠ ر.ع/كجم</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <button class="bg-lime-600 text-white px-3 py-1 rounded-md text-sm">عرض الكل</button>
+                                        <div class="text-sm text-lime-700">٢٤ منتج آخر</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="max-w-md mx-auto">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">تواصل مباشر</h3>
+                            <p class="text-gray-600">
+                                تزيل زرعة الوسطاء، مما يسمح للمزارعين بالبيع مباشرة للمستهلكين والشركات بأسعار عادلة.
+                            </p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">اعرف طعامك</h3>
+                            <p class="text-gray-600">
+                                يتيح لك التتبع الكامل معرفة مصدر طعامك بالضبط، وكيف تم زراعته، ومتى تم حصاده.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">دعم الاقتصاد المحلي</h3>
+                            <p class="text-gray-600">
+                                كل عملية شراء من خلال زرعة تدعم المزارعين المحليين مباشرة وتساهم في نظام غذائي مستدام.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">تأثيرنا</h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    تحدث زرعة تغييرًا إيجابيًا عبر الأبعاد البيئية والاقتصادية والاجتماعية.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+                <!-- Environmental Impact -->
+                <div class="flex-1 bg-green-50 rounded-xl p-8 border border-green-100">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">بيئي</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">تقليل خسائر ما بعد الحصاد</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">تقليل مسافات نقل الغذاء وانبعاثات النقل</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">تعزيز ممارسات الزراعة التجديدية والعضوية</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">تقليل نفايات التغليف من خلال التوزيع المحلي</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Economic Impact -->
+                <div class="flex-1 bg-amber-50 rounded-xl p-8 border border-amber-100">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">اقتصادي</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-amber-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">زيادة دخل المزارعين من خلال إزالة الوسطاء</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-amber-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">توفير الوصول إلى أسواق أوسع للمزارعين الصغار</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-amber-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">خلق فرص عمل جديدة في توزيع الأغذية المحلية</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-amber-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">تقليل الاعتماد على المنتجات المستوردة</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Impact -->
+                <div class="flex-1 bg-blue-50 rounded-xl p-8 border border-blue-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">اجتماعي</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">تعزيز الروابط المجتمعية بين المنتجين والمستهلكين</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">زيادة الوعي حول أنظمة الغذاء المحلية</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">تحسين الوصول إلى الغذاء الطازج والمغذي</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 ml-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">الحفاظ على المعرفة والممارسات الزراعية التقليدية</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-lime-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold text-white">هل أنت مستعد للانضمام إلى الثورة الزراعية؟</h2>
+                    <p class="mt-4 text-xl text-lime-100">
+                        سواء كنت مزارعًا أو مستهلكًا أو صاحب مطعم أو موردًا، لدى زرعة شيء لك.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-end">
+                    <button class="bg-lime-600 hover:bg-lime-800 text-white border border-lime-500 px-6 py-3 rounded-lg text-lg font-medium transition duration-300 shadow-lg hover:shadow-xl ml-4">
+                        تسوق المنتجات المحلية
+                    </button>
+                    <button class="bg-white hover:bg-gray-100 text-lime-700 px-6 py-3 rounded-lg text-lg font-medium transition duration-300 shadow-lg hover:shadow-xl">
+                        انضم كمزارع
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">عن زرعة</h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    مهمتنا هي إنشاء نظام غذائي مستدام ومرن من خلال ربط أصحاب المصلحة الزراعيين المحليين.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-64 h-64 bg-lime-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                        <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                        <div class="relative">
+                            <svg class="w-full h-auto max-w-md mx-auto" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="200" cy="150" r="100" fill="#4d7c0f" opacity="0.1"/>
+                                <path d="M200 80C170 80 145 105 145 135C145 165 170 190 200 190C230 190 255 165 255 135C255 105 230 80 200 80Z" fill="#4d7c0f" opacity="0.2"/>
+                                <path d="M200 100C180 100 165 115 165 135C165 155 180 170 200 170C220 170 235 155 235 135C235 115 220 100 200 100Z" fill="#4d7c0f" opacity="0.3"/>
+                                <path d="M200 120C190 120 185 125 185 135C185 145 190 150 200 150C210 150 215 145 215 135C215 125 210 120 200 120Z" fill="#4d7c0f"/>
+                                <path d="M200 50V80" stroke="#4d7c0f" stroke-width="4"/>
+                                <path d="M200 190V220" stroke="#4d7c0f" stroke-width="4"/>
+                                <path d="M135 135H105" stroke="#4d7c0f" stroke-width="4"/>
+                                <path d="M295 135H265" stroke="#4d7c0f" stroke-width="4"/>
+                                <path d="M153 88L133 68" stroke="#4d7c0f" stroke-width="4"/>
+                                <path d="M267 202L247 182" stroke="#4d7c0f" stroke-width="4"/>
+                                <path d="M153 182L133 202" stroke="#4d7c0f" stroke-width="4"/>
+                                <path d="M267 68L247 88" stroke="#4d7c0f" stroke-width="4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="max-w-md mx-auto">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">قصتنا</h3>
+                            <p class="text-gray-600">
+                                ولدت زرعة من رؤية لتحويل كيفية تواصل وتجارة المجتمعات الزراعية المحلية. لقد أدركنا التحديات التي يواجهها صغار المزارعين في الوصول إلى الأسواق والطلب المتزايد من المستهلكين على مصادر غذاء شفافة ومستدامة.
+                            </p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">رؤيتنا</h3>
+                            <p class="text-gray-600">
+                                نتصور عالمًا تزدهر فيه أنظمة الغذاء المحلية، حيث يتلقى المزارعون تعويضًا عادلاً عن عملهم، وحيث يتمتع المستهلكون بإمكانية الوصول إلى طعام طازج ومغذٍ مع شفافية كاملة حول أصوله.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">انضم إلينا</h3>
+                            <p class="text-gray-600">
+                                سواء كنت مزارعًا أو مستهلكًا أو صاحب مطعم أو موردًا، لديك دور تلعبه في بناء مستقبل غذائي أكثر استدامة. انضم إلى مجتمع زرعة اليوم.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-lime-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z"></path>
+                        </svg>
+                        <span class="mr-2 text-xl font-bold">زرعة</span>
+                    </div>
+                    <p class="text-gray-400">
+                        بناء شبكات زراعية مستدامة لمستقبل أفضل.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">المنصة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">للمزارعين</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">للمستهلكين</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">للمطاعم</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">للموردين</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">الشركة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">من نحن</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">فريقنا</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">الوظائف</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">تواصل معنا</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-lime-500 transition duration-300">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">
+                        اشترك في نشرتنا الإخبارية:
+                    </p>
+                    <div class="mt-2 flex">
+                        <button class="bg-lime-600 hover:bg-lime-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+                            اشترك
+                        </button>
+                        <input type="email" placeholder="بريدك الإلكتروني" class="bg-gray-700 text-white px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-lime-500 w-full">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; ٢٠٢٣ زرعة. جميع الحقوق محفوظة.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-lime-500 text-sm transition duration-300">سياسة ملفات تعريف الارتباط</a>
+                    <a href="#" class="text-gray-400 hover:text-lime-500 text-sm transition duration-300">شروط الخدمة</a>
+                    <a href="#" class="text-gray-400 hover:text-lime-500 text-sm transition duration-300">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add animation classes
+        document.addEventListener('DOMContentLoaded', function() {
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes blob {
+                    0% {
+                        transform: scale(1);
+                    }
+                    33% {
+                        transform: scale(1.1);
+                    }
+                    66% {
+                        transform: scale(0.9);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+                .animate-blob {
+                    animation: blob 7s infinite;
+                }
+                .animation-delay-2000 {
+                    animation-delay: 2s;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'955ee6716747d1d4',t:'MTc1MDk2MzkzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
